@@ -3,6 +3,10 @@ import Button from "@/components/ui/Button";
 export default async function Home() {
 
   return (
-    <Button size='lg' variant='ghost'>Hallo</Button>
+    <>
+      <h1>Click me!</h1>
+      <Button size='lg' variant='ghost'>Hallo</Button>
+    </>
+    
   )
 }
