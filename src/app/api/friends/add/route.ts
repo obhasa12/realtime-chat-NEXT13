@@ -10,7 +10,6 @@ export async function POST(req: Request) {
         const body = await req.json();
         const { email: emailToAdd } = addFriendValidator.parse(body.email)
         const idToAdd = await fetchRedis('get', `user:email:${emailToAdd}`) as string;
-
         const session = await getServerSession(authOptions)
 
         if(!idToAdd){
