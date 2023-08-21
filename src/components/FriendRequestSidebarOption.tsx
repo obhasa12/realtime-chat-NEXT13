@@ -18,6 +18,10 @@ const FriendRequestSidebarOption: FC<FriendRequestSidebarOptionProps> = ({ sessi
         <User className='h-4 w-4' />
     </div>
     <p className='truncate'>Friend request</p>
+
+    {unseenRequestCount > 0 ? (
+      <div className='rounded-full w-5 h-5 text-xs flex justify-center items-center text-white bg-indigo-600'>{unseenRequestCount}</div>
+    ): null }
   </Link>
 }
 

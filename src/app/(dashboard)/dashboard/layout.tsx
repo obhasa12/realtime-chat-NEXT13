@@ -31,7 +31,9 @@ const layout = async ({ children }: layoutProps ) => {
     const session = await getServerSession(authOptions);
     if(!session) notFound();
 
-    const unseenRequestCount = (await fetchRedis('smembers', `user:${session.user.id}:incoming_friend_requests`) as User[]).length
+    const unseenRequestCount = (
+      await fetchRedis('smembers', `${session.user.id}:incoming_friend_requests`
+      ) as User[]).length;
 
   return(
     <>
@@ -95,7 +97,6 @@ const layout = async ({ children }: layoutProps ) => {
               </ul>
             </nav>
           </div>
-
           { children }
         </div>
     </>
